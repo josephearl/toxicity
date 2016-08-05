@@ -13,14 +13,17 @@
 
 <hr>
 
-<div id="chart-wrapper"></div>
+<div id="toxicity-chart"></div>
 
 <p>Hover over the bars to see detailed information about the score for the class.</p>
 
 <p>The y-axis is fixed with 41 as a maximum to make it easier to compare charts for different code-bases.</p>
 
+<table id="toxicity-table"></table>
+
 <script>
-toxicity.render(thresholds(), toxicities());
+toxicity.renderChart("#toxicity-chart", thresholds(), toxicities());
+toxicity.renderTable("#toxicity-table", thresholds(), toxicities());
 </script>
 </body>
 </html>

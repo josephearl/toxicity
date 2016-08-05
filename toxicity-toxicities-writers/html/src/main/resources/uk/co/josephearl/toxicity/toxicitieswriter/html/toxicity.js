@@ -109,13 +109,13 @@ toxicity.rgbToHex = function(c) {
   return "#" + toxicity.componentToHex(r) + toxicity.componentToHex(g) + toxicity.componentToHex(b);
 }
 
-toxicity.render = function(thresholds, toxicities) {
+toxicity.renderChart = function(el, thresholds, toxicities) {
   var CHEIGHT = 425;
   var BWIDTH = 6;
   var BGAP = 2;
   var LEFTSPACE = 25;
 
-  toxicities.sort(function(da, db) { return db.total - da.total })
+  toxicities.sort(function(da, db) { return db.total - da.total });
 
   var colors = toxicity.shuffle(toxicity.uniqueColors(thresholds.length));
 
@@ -127,7 +127,7 @@ toxicity.render = function(thresholds, toxicities) {
 
   d3.selectAll("svg").remove();
 
-  var chart = d3.select("#chart-wrapper").append("svg")
+  var chart = d3.select(el).append("svg")
     .attr("class", "chart")
     .attr("width", LEFTSPACE + (BWIDTH + BGAP) * toxicities.length + 10)
   // To accommodate bottom label
@@ -172,7 +172,7 @@ toxicity.render = function(thresholds, toxicities) {
     .attr("y", function(d) { return yscale(d.y + d.y0); })
     .attr("height", function(d) { return CHEIGHT - yscale(d.y); })
     .attr("width", function(d) { return BWIDTH; })
-    .call(tooltip(thresholds, colors, function(d) { return d.data; }));
+    .call(tooltip(el, thresholds, colors, function(d) { return d.data; }));
 
   chart.append("g")
     .attr("class", "axis")
@@ -180,8 +180,7 @@ toxicity.render = function(thresholds, toxicities) {
     .call(yaxis);
 }
 
-
-var tooltip = function(thresholds, colors, a) {
+var tooltip = function(el, thresholds, colors, a) {
   var accessor = arguments.length ? a : undefined;
 
   function tooltip(selection) {
@@ -190,9 +189,9 @@ var tooltip = function(thresholds, colors, a) {
         if (accessor) {
           d = accessor(d);
         }
-         var div = d3.select("#chart-wrapper").selectAll("div.tooltip");
+         var div = d3.select(el).selectAll("div.tooltip");
         if (div.empty()) {
-           div = d3.select("#chart-wrapper").append("div").attr("class", "tooltip").style("opacity", 0);
+           div = d3.select(el).append("div").attr("class", "tooltip").style("opacity", 0);
         }
         div.html("");
         div.append("h2").text(d.name);
@@ -233,4 +232,28 @@ var tooltip = function(thresholds, colors, a) {
   }
 
   return tooltip;
+};
+
+toxicity.renderTable = function(el, thresholds, toxicities) {
+  var header = "<tr>"
+    + "<th>File</th>"
+    + "<th>Toxicity</th>";
+  thresholds.forEach(function(metricType) {
+    header += "<th>" + metricType + "</th>";
+  });
+  header += "</tr>";
+
+  $(el).append(header);
+
+  toxicities.map(function(d, i) {
+    var row = "<tr>"
+      + "<td>" + d.path + "</td>"
+      + "<td class=\"number\">" + d.total + "</td>";
+    thresholds.forEach(function(metricType) {
+      row += "<td class=\"number\">" + (d.toxicities[metricType] || 0) + "</td>";
+    });
+    row += "</tr>";
+
+    $(el).append(row);
+  });
 };

@@ -1,20 +1,19 @@
 body {
-	font-family: sans-serif;
-	color: #333;
+  font-family: sans-serif;
+  color: #333;
 }
 
 h1 {
-	margin: 0.3em 0;
+  margin: 0.3em 0;
 }
 
-#chart-wrapper {
-	width: 100%;
-	overflow-x: auto;
+#toxicity-chart {
+  width: 100%;
+  overflow-x: auto;
 }
-
 
 .axis path {
-	opacity: 0;
+  opacity: 0;
 }
 
 .axis line {
@@ -44,29 +43,45 @@ div.tooltip {
 }
 
 .tooltip h2 {
-	font-family: sans-serif;
-	font-size: 130%;
-	margin: 0 0 0 0;
+  font-family: sans-serif;
+  font-size: 130%;
+  margin: 0 0 0 0;
 }
 
 .tooltip p.filename {
-	font-size: 90%;
-	margin: 0 0 0.5em 0;
-	border-bottom: 1px solid #BBB;
+  font-size: 90%;
+  margin: 0 0 0.5em 0;
+  border-bottom: 1px solid #BBB;
 }
 
 .tooltip p {
-	line-height: 1.1em;
-	margin: 0 1px 3px 1px;
+  line-height: 1.1em;
+  margin: 0 1px 3px 1px;
 }
 
 .tooltip-swatch {
-	padding-right: 5px;
-	margin: 0 2px 1px 0;
-	border: 1px solid;
-	color: #EEE;
+  padding-right: 5px;
+  margin: 0 2px 1px 0;
+  border: 1px solid;
+  color: #EEE;
 }
 
 .tooltip .total {
-	font-weight: bold;
+  font-weight: bold;
+}
+
+#toxicity-table {
+}
+
+th {
+  padding-right: 10px;
+  text-align: left;
+}
+
+td {
+  padding-right: 10px;
+}
+
+td.number {
+  text-align: right;
 }
