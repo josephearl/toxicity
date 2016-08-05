@@ -1,0 +1,10 @@
+.cache
+.history
+.target
+.classpath
+.project
+build/
+.idea/
+.gradle/
+*.iml
+*.DS_Store

@@ -1,0 +1,42 @@
+group 'uk.co.josephearl.toxicity'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'maven-publish'
+apply plugin: 'uk.co.josephearl.gradle.toxicity'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile project(':toxicity')
+  compile project(':toxicity-metrics-readers:metrics-reader-checkstyle')
+  compile project(':toxicity-thresholds-readers:thresholds-reader-checkstyle')
+  compile project(':toxicity-thresholds-readers:thresholds-reader-eslint')
+  compile project(':toxicity-toxicities-writers:toxicities-writer-csv')
+  compile project(':toxicity-toxicities-writers:toxicities-writer-html')
+  compile 'net.sourceforge.argparse4j:argparse4j:0.7.0'
+  testCompile 'junit:junit:4.11'
+  testCompile 'org.assertj:assertj-core:3.5.2'
+}
+
+mainClassName = "uk.co.josephearl.toxicity.cli.ToxicityCli"
+
+jar {
+  manifest {
+    attributes 'Main-Class': mainClassName
+  }
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}

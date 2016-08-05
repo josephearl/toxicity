@@ -1,0 +1,1 @@
+function toxicities() { return [{"path":"A.java","name":"A.java","total":4.8,"toxicities": {"MethodLength":2.5,"FileLength":1.2,"CyclomaticComplexity":1.1}},{"path":"B.java","name":"B.java","total":2.6,"toxicities": {"MethodLength":1.5,"CyclomaticComplexity":1.1}},{"path":"C.java","name":"C.java","total":1.0,"toxicities": {"AnonInnerLength":1.0}}]; }

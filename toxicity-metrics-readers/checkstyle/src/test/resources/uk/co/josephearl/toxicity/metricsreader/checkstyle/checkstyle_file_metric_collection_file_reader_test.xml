@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="4.1">
+    <file name="..\..\tools\hibernate\src\org\hibernate\cfg\Configuration.java">
+        <error line="1" severity="warning" message="File length is 1,965 lines (max allowed is 1,500)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+        <error line="114" column="1" severity="warning" message="Class Data Abstraction Coupling is 42 (max allowed is 10) classes [PostInsertEventListener, JACCConfiguration, ArrayList, FlushEntityEventListener, Mappings, LockEventListener, PersistEventListener, PostLoadEventListener, Mapping, PostDeleteEventListener, FileOutputStream, EventListeners, MergeEventListener, PostUpdateEventListener, InputSource, HashSet, JarFile, ReplicateEventListener, FileInputStream, SessionFactoryImpl, DeleteEventListener, AutoFlushEventListener, DirtyCheckEventListener, FlushEventListener, TreeMap, PreUpdateEventListener, PreInsertEventListener, PreLoadEventListener, XMLHelper, EvictEventListener, SettingsFactory, LoadEventListener, File, MappingException, PreDeleteEventListener, StringReader, HibernateException, HashMap, SaveOrUpdateEventListener, RefreshEventListener, InitializeCollectionEventListener, Properties]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="114" column="1" severity="warning" message="Class Fan-Out Complexity is 95 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="518" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="645" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="645" column="9" severity="warning" message="Method length is 77 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="728" column="9" severity="warning" message="Cyclomatic Complexity is 16 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="728" column="9" severity="warning" message="Method length is 90 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="824" column="9" severity="warning" message="Cyclomatic Complexity is 19 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="824" column="9" severity="warning" message="Method length is 120 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1001" column="9" severity="warning" message="Method length is 55 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1559" column="9" severity="warning" message="Cyclomatic Complexity is 57 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1559" column="9" severity="warning" message="Method length is 239 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1910" column="24" severity="warning" message="Anonymous inner class length is 36 lines (max allowed is 35)." source="com.puppycrawl.tools.checkstyle.checks.sizes.AnonInnerLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\cfg\DefaultNamingStrategy.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\cfg\Environment.java">
+        <error line="477" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\cfg\ExtendsQueueEntry.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\cfg\HbmBinder.java">
+        <error line="1" severity="warning" message="File length is 3,015 lines (max allowed is 1,500)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+        <error line="85" column="1" severity="warning" message="Class Data Abstraction Coupling is 40 (max allowed is 10) classes [JoinedIterator, Any, Property, RootClass, JoinedSubclass, MetaAttribute, SimpleAuxiliaryDatabaseObject, Join, OneToMany, ArrayList, Component, NamedSQLQuerySecondPass, SequencedHashMap, UnionSubclass, Formula, ManyToOne, UniqueKey, StringTokenizer, ManyToOneSecondPass, ExtendsQueueEntry, Iterator, HashSet, Column, MapSecondPass, OneToOne, IdentifierCollectionSecondPass, IndexBackref, ListSecondPass, EntityElementHandler, Backref, SimpleValue, NamedQueryDefinition, DependantValue, MappingException, FilterDefinition, CollectionSecondPass, HashMap, ResultSetMappingSecondPass, SingleTableSubclass, Properties]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="85" column="1" severity="warning" message="Class Fan-Out Complexity is 77 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="104" column="9" severity="warning" message="Cyclomatic Complexity is 21 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="104" column="9" severity="warning" message="Method length is 140 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="285" column="9" severity="warning" message="Cyclomatic Complexity is 16 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="285" column="9" severity="warning" message="Method length is 83 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="371" column="9" severity="warning" message="Method length is 55 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="600" column="9" severity="warning" message="Cyclomatic Complexity is 14 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="600" column="9" severity="warning" message="Method length is 74 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="852" column="9" severity="warning" message="Method length is 54 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="908" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="908" column="9" severity="warning" message="Method length is 105 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1015" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1015" column="9" severity="warning" message="Method length is 90 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1177" column="9" severity="warning" message="Cyclomatic Complexity is 23 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1177" column="9" severity="warning" message="Method length is 86 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1245" column="36" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+        <error line="1281" column="9" severity="warning" message="Cyclomatic Complexity is 31 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1281" column="9" severity="warning" message="Method length is 180 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1690" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1744" column="9" severity="warning" message="Cyclomatic Complexity is 31 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1744" column="9" severity="warning" message="Method length is 147 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2008" column="9" severity="warning" message="Cyclomatic Complexity is 23 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2008" column="9" severity="warning" message="Method length is 115 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2252" column="9" severity="warning" message="Cyclomatic Complexity is 16 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2252" column="9" severity="warning" message="Method length is 78 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2335" column="9" severity="warning" message="Cyclomatic Complexity is 18 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2335" column="9" severity="warning" message="Method length is 125 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2921" column="9" severity="warning" message="Method length is 59 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\engine\QueryParameters.java">
+        <error line="176" column="16" severity="warning" message="More than 10 parameters." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+        <error line="361" column="9" severity="warning" message="Method length is 57 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\engine\StatefulPersistenceContext.java">
+        <error line="48" column="1" severity="warning" message="Class Data Abstraction Coupling is 17 (max allowed is 10) classes [TransientObjectException, AssociationKey, InvalidObjectException, ArrayList, EntityEntry, NonUniqueObjectException, MarkerObject, HashSet, CollectionLoadContext, HashMap, EntityKey, AssertionFailure, PersistentObjectException, CollectionEntry, CollectionKey, ReferenceMap, BatchFetchQueue]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="48" column="1" severity="warning" message="Class Fan-Out Complexity is 39 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="402" column="28" severity="warning" message="More than 10 parameters." source="com.puppycrawl.tools.checkstyle.checks.sizes.ParameterNumberCheck"/>
+        <error line="1108" column="9" severity="warning" message="Method length is 85 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1194" column="9" severity="warning" message="Cyclomatic Complexity is 20 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1194" column="9" severity="warning" message="Method length is 97 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\engine\transaction\Isolater.java">
+        <error line="62" column="17" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="62" column="17" severity="warning" message="Method length is 68 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\engine\TransactionHelper.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\engine\TwoPhaseLoad.java">
+        <error line="88" column="9" severity="warning" message="Cyclomatic Complexity is 20 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="88" column="9" severity="warning" message="Method length is 123 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="218" column="17" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\event\def\AbstractSaveEventListener.java">
+        <error line="207" column="9" severity="warning" message="Method length is 91 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="423" column="9" severity="warning" message="Method length is 53 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\event\def\AbstractVisitor.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\event\def\DefaultAutoFlushEventListener.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\event\def\DefaultPersistEventListener.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\exec\AbstractStatementExecutor.java">
+        <error line="142" column="9" severity="warning" message="Method length is 54 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\exec\BasicExecutor.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\exec\MultiTableDeleteExecutor.java">
+        <error line="75" column="9" severity="warning" message="Method length is 64 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\exec\MultiTableUpdateExecutor.java">
+        <error line="39" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="99" column="9" severity="warning" message="Method length is 74 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\exec\StatementExecutor.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\HqlSqlWalker.java">
+        <error line="89" column="1" severity="warning" message="Class Data Abstraction Coupling is 20 (max allowed is 10) classes [AssignmentSpecification, NamedParameterSpecification, SqlGenerator, ArrayList, QueryException, JoinProcessor, WithClauseVisitor, LiteralProcessor, ASTPrinter, SyntheticAndFactory, SessionFactoryHelper, PositionalParameterSpecification, SqlASTFactory, ErrorCounter, AliasGenerator, VersionTypeSeedParameterSpecification, HashSet, HashMap, SemanticException, NodeTraverser]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="89" column="1" severity="warning" message="Class Fan-Out Complexity is 64 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="509" column="9" severity="warning" message="Method length is 52 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="598" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="598" column="9" severity="warning" message="Method length is 89 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\SqlASTFactory.java">
+        <error line="70" column="9" severity="warning" message="Cyclomatic Complexity is 56 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="70" column="9" severity="warning" message="Method length is 92 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\SqlGenerator.java">
+        <error line="182" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\DotNode.java">
+        <error line="225" column="9" severity="warning" message="Method length is 58 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="344" column="9" severity="warning" message="Method length is 82 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\FromClause.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\FromElement.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\FromElementFactory.java">
+        <error line="170" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="170" column="9" severity="warning" message="Method length is 55 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\FromElementType.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\FromReferenceNode.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\HqlSqlWalkerNode.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\IdentNode.java">
+        <error line="74" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="74" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\ImpliedFromElement.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\tree\IndexNode.java">
+        <error line="56" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="56" column="9" severity="warning" message="Method length is 75 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\ast\util\LiteralProcessor.java">
+        <error line="129" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="129" column="9" severity="warning" message="Method length is 53 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\PathExpressionParser.java">
+        <error line="102" column="9" severity="warning" message="Cyclomatic Complexity is 18 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="102" column="9" severity="warning" message="Method length is 71 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\PreprocessingParser.java">
+        <error line="49" column="9" severity="warning" message="Cyclomatic Complexity is 14 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="49" column="9" severity="warning" message="Method length is 65 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\QueryTranslatorImpl.java">
+        <error line="58" column="1" severity="warning" message="Class Data Abstraction Coupling is 19 (max allowed is 10) classes [Type, QuerySelect, EntityType, HolderInstantiator, ArrayList, QueryException, LockMode, SequencedHashMap, JoinSequence.Selector, CollectionPersister, ForUpdateFragment, IteratorImpl, Queryable, ParameterTranslations, JoinSequence, HibernateException, HashSet, HashMap, PreprocessingParser]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="58" column="1" severity="warning" message="Class Fan-Out Complexity is 45 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="331" column="17" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+        <error line="514" column="9" severity="warning" message="Cyclomatic Complexity is 23 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="514" column="9" severity="warning" message="Method length is 108 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="662" column="9" severity="warning" message="Cyclomatic Complexity is 22 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="662" column="9" severity="warning" message="Method length is 83 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\SelectParser.java">
+        <error line="54" column="9" severity="warning" message="Cyclomatic Complexity is 42 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="54" column="9" severity="warning" message="Method length is 137 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\SelectPathExpressionParser.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\hql\classic\WhereParser.java">
+        <error line="189" column="9" severity="warning" message="Cyclomatic Complexity is 22 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="189" column="9" severity="warning" message="Method length is 85 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="380" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="380" column="9" severity="warning" message="Method length is 53 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\impl\SessionFactoryImpl.java">
+        <error line="110" column="1" severity="warning" message="Class Data Abstraction Coupling is 24 (max allowed is 10) classes [CacheKey, Class, InvalidObjectException, QueryPlanCache, ArrayList, StatisticsImpl, SchemaExport, Reference, SchemaValidator, UUIDHexGenerator, ThreadLocalSessionContext, StringRefAddr, NativeSQLQuerySpecification, MappingException, SchemaUpdate, StatelessSessionImpl, HashSet, HibernateException, JTASessionContext, HashMap, AssertionFailure, SessionImpl, UpdateTimestampsCache, Properties]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="110" column="1" severity="warning" message="Class Fan-Out Complexity is 73 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="147" column="9" severity="warning" message="Cyclomatic Complexity is 31 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="147" column="9" severity="warning" message="Method length is 193 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="350" column="9" severity="warning" message="Method length is 72 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="643" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\impl\SessionFactoryObjectFactory.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\impl\SessionImpl.java">
+        <error line="1" severity="warning" message="File length is 1,904 lines (max allowed is 1,500)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+        <error line="114" column="1" severity="warning" message="Class Data Abstraction Coupling is 35 (max allowed is 10) classes [InternalError, Type, SaveOrUpdateEvent, CriteriaImpl, Class, SQLQueryImpl, FlushEvent, ObjectDeletedException, SessionStatisticsImpl, AutoFlushEvent, HashSet, TransientObjectException, ReplicateEvent, FilterImpl, PersistEvent, ActionQueue, DeleteEvent, EvictEvent, QueryException, CriteriaLoader, CollectionFilterImpl, LockEvent, CustomLoader, JDBCContext, StatefulPersistenceContext, MappingException, SessionException, InitializeCollectionEvent, HibernateException, HashMap, QueryParameters, LoadEvent, RefreshEvent, DirtyCheckEvent, MergeEvent]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="114" column="1" severity="warning" message="Class Fan-Out Complexity is 97 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="1381" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\impl\SQLQueryImpl.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\impl\StatelessSessionImpl.java">
+        <error line="51" column="1" severity="warning" message="Class Fan-Out Complexity is 39 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\custom\SQLCustomQuery.java">
+        <error line="33" column="1" severity="warning" message="Class Data Abstraction Coupling is 14 (max allowed is 10) classes [ColumnCollectionAliases, SQLLoadable, SQLLoadableCollection, ColumnEntityAliases, ArrayList, SQLQueryReturnProcessor, LockMode, DefaultEntityAliases, Map, GeneratedCollectionAliases, SQLQueryParser, HashSet, CollectionAliases, EntityAliases]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="96" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="96" column="9" severity="warning" message="Method length is 122 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\custom\SQLQueryCollectionReturn.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\custom\SQLQueryJoinReturn.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\custom\SQLQueryParser.java">
+        <error line="90" column="9" severity="warning" message="Method length is 83 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\hql\QueryLoader.java">
+        <error line="45" column="1" severity="warning" message="Class Fan-Out Complexity is 32 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="98" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="98" column="9" severity="warning" message="Method length is 81 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\JoinWalker.java">
+        <error line="262" column="9" severity="warning" message="Method length is 55 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="409" column="9" severity="warning" message="Method length is 57 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="478" column="9" severity="warning" message="Method length is 52 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="844" column="9" severity="warning" message="Method length is 52 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="900" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\loader\Loader.java">
+        <error line="1" severity="warning" message="File length is 2,292 lines (max allowed is 1,500)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+        <error line="79" column="1" severity="warning" message="Class Data Abstraction Coupling is 20 (max allowed is 10) classes [Type, PostLoadEvent, ScrollableResultsImpl, Serializable, PreLoadEvent, SubselectFetch, ArrayList, QueryKey, ColumnNameCache, ResultSetWrapper, WrongClassException, HashSet, StaleObjectStateException, QueryParameters, EntityKey, HashMap, AssertionFailure, FetchingScrollableResultsImpl, Set, EntityUniqueKey]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="79" column="1" severity="warning" message="Class Fan-Out Complexity is 55 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="408" column="9" severity="warning" message="Method length is 107 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="649" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="649" column="9" severity="warning" message="Method length is 73 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="803" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="803" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="889" column="9" severity="warning" message="Method length is 55 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="951" column="9" severity="warning" message="Method length is 60 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1149" column="9" severity="warning" message="Method length is 62 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1329" column="9" severity="warning" message="Method length is 80 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1525" column="9" severity="warning" message="Cyclomatic Complexity is 22 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1525" column="9" severity="warning" message="Method length is 76 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2202" column="9" severity="warning" message="Method length is 56 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\mapping\Collection.java">
+        <error line="249" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\mapping\Table.java">
+        <error line="229" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="229" column="9" severity="warning" message="Method length is 58 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="318" column="9" severity="warning" message="Cyclomatic Complexity is 24 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="318" column="9" severity="warning" message="Method length is 106 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\CollectionPersister.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\CollectionPropertyMapping.java">
+        <error line="48" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\CollectionPropertyNames.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\CompositeElementPropertyMapping.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\ElementPropertyMapping.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\NamedQueryCollectionInitializer.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\OneToManyPersister.java">
+        <error line="154" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="154" column="9" severity="warning" message="Method length is 87 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\QueryableCollection.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\collection\SQLLoadableCollection.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\AbstractEntityPersister.java">
+        <error line="1" severity="warning" message="File length is 3,496 lines (max allowed is 1,500)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+        <error line="93" column="1" severity="warning" message="Class Data Abstraction Coupling is 26 (max allowed is 10) classes [Type, CacheKey, NamedQueryLoader, ArrayList, CascadeStyle, Delete, Update, CascadeEntityLoader, HashSet, StaleObjectStateException, FetchMode, BasicEntityPropertyMapping, StructuredCacheEntry, Select, Insert, EntityMetamodel, SimpleSelect, UnstructuredCacheEntry, FilterHelper, EntityLoader, SelectFragment, MappingException, HibernateException, AssertionFailure, HashMap, Alias]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="93" column="1" severity="warning" message="Class Fan-Out Complexity is 68 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="398" column="9" severity="warning" message="Cyclomatic Complexity is 21 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="398" column="9" severity="warning" message="Method length is 251 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="730" column="9" severity="warning" message="Method length is 51 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="933" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1134" column="9" severity="warning" message="Method length is 52 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1432" column="9" severity="warning" message="Method length is 58 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1654" column="9" severity="warning" message="Cyclomatic Complexity is 21 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1654" column="9" severity="warning" message="Method length is 67 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1742" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1850" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="1850" column="9" severity="warning" message="Method length is 60 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="1933" column="9" severity="warning" message="Method length is 59 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2018" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2018" column="9" severity="warning" message="Method length is 62 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2132" column="9" severity="warning" message="Cyclomatic Complexity is 23 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2132" column="9" severity="warning" message="Method length is 88 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2234" column="9" severity="warning" message="Cyclomatic Complexity is 17 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2234" column="9" severity="warning" message="Method length is 79 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="2445" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2609" column="9" severity="warning" message="Cyclomatic Complexity is 13 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="2609" column="9" severity="warning" message="Method length is 59 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="3403" column="9" severity="warning" message="Method length is 74 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\AbstractPropertyMapping.java">
+        <error line="113" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\JoinedSubclassEntityPersister.java">
+        <error line="83" column="9" severity="warning" message="Cyclomatic Complexity is 20 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="83" column="9" severity="warning" message="Method length is 245 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\SingleTableEntityPersister.java">
+        <error line="44" column="1" severity="warning" message="Class Fan-Out Complexity is 32 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassFanOutComplexityCheck"/>
+        <error line="101" column="9" severity="warning" message="Cyclomatic Complexity is 29 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="101" column="9" severity="warning" message="Method length is 283 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\SQLLoadable.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\UnionSubclassEntityPersister.java">
+        <error line="56" column="9" severity="warning" message="Cyclomatic Complexity is 11 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="56" column="9" severity="warning" message="Method length is 124 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="328" column="9" severity="warning" message="Cyclomatic Complexity is 12 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="328" column="9" severity="warning" message="Method length is 70 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\entity\UniqueKeyLoadable.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\persister\PersisterFactory.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\pretty\DDLFormatter.java">
+        <error line="111" column="17" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+        <error line="119" column="17" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\pretty\Formatter.java">
+        <error line="101" column="9" severity="warning" message="Cyclomatic Complexity is 23 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="101" column="9" severity="warning" message="Method length is 85 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="344" column="17" severity="warning" message="Boolean expression complexity is 5 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\pretty\MessageHelper.java">
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\sql\Template.java">
+        <error line="78" column="9" severity="warning" message="Cyclomatic Complexity is 30 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="78" column="9" severity="warning" message="Method length is 113 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="196" column="9" severity="warning" message="Cyclomatic Complexity is 20 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="196" column="9" severity="warning" message="Method length is 82 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="284" column="17" severity="warning" message="Boolean expression complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.BooleanExpressionComplexityCheck"/>
+    </file>
+    <file name="..\..\tools\hibernate\src\org\hibernate\tool\hbm2ddl\SchemaExport.java">
+        <error line="40" column="1" severity="warning" message="Class Data Abstraction Coupling is 13 (max allowed is 10) classes [JDBCException, ArrayList, InputStreamReader, File, SuppliedConnectionProviderConnectionHelper, FileWriter, ManagedProviderConnectionHelper, Configuration, BufferedReader, SuppliedConnectionHelper, DDLFormatter, FileInputStream, Properties]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+        <error line="150" column="9" severity="warning" message="Cyclomatic Complexity is 15 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="150" column="9" severity="warning" message="Method length is 83 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+        <error line="310" column="9" severity="warning" message="Cyclomatic Complexity is 19 (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+        <error line="310" column="9" severity="warning" message="Method length is 92 lines (max allowed is 50)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+    </file>
+</checkstyle>

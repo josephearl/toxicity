@@ -1,0 +1,24 @@
+rootProject.name = 'toxicity-parent'
+
+include 'toxicity'
+include 'toxicity-cli'
+
+include 'toxicity-metrics-readers:checkstyle'
+include 'toxicity-thresholds-readers:checkstyle'
+include 'toxicity-thresholds-readers:eslint'
+include 'toxicity-toxicities-writers:csv'
+include 'toxicity-toxicities-writers:html'
+
+include 'toxicity-thresholds:checkstyle'
+include 'toxicity-thresholds:eslint'
+
+include 'gradle-toxicity'
+
+project(':toxicity-metrics-readers:checkstyle').name = 'metrics-reader-checkstyle'
+project(':toxicity-thresholds-readers:checkstyle').name = 'thresholds-reader-checkstyle'
+project(':toxicity-thresholds-readers:eslint').name = 'thresholds-reader-eslint'
+project(':toxicity-toxicities-writers:csv').name = 'toxicities-writer-csv'
+project(':toxicity-toxicities-writers:html').name = 'toxicities-writer-html'
+
+project(':toxicity-thresholds:checkstyle').name = 'thresholds-checkstyle'
+project(':toxicity-thresholds:eslint').name = 'thresholds-eslint'

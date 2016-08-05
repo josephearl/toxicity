@@ -1,0 +1,5 @@
+apply plugin: "groovy"
+
+sourceSets.main.java.srcDirs = []
+sourceSets.main.groovy.srcDirs = ["../gradle-toxicity/src/main/checkstyle"]
+sourceSets.main.resources.srcDirs = ["../gradle-toxicity/src/main/resources"]

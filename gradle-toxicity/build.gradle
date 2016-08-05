@@ -1,0 +1,20 @@
+group 'uk.co.josephearl'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile localGroovy(), gradleApi()
+  testCompile 'junit:junit:4.11'
+  testCompile 'org.assertj:assertj-core:3.5.2'
+}
+
+sourceSets.main.java.srcDirs = []
+sourceSets.main.groovy.srcDirs += ["src/main/java"]

@@ -1,0 +1,27 @@
+group 'uk.co.josephearl.toxicity'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly project(':toxicity')
+  testCompile project(':toxicity')
+  testCompile 'junit:junit:4.11'
+  testCompile 'org.assertj:assertj-core:3.5.2'
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}

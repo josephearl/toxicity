@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="toxicity.css">
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="d3.v3.min.js"></script>
+    <script src="toxicity.js"></script>
+    <script src="toxicities.js"></script>
+    <script src="thresholds.js"></script>
+</head>
+<body>
+<h1>Toxicity Report</h1>
+
+<hr>
+
+<div id="chart-wrapper"></div>
+
+<p>Hover over the bars to see detailed information about the score for the class.</p>
+
+<p>The y-axis is fixed with 41 as a maximum to make it easier to compare charts for different code-bases.</p>
+
+<script>
+toxicity.render(thresholds(), toxicities());
+</script>
+</body>
+</html>
