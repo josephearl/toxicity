@@ -50,8 +50,9 @@ public final class CheckstyleThresholdsReader implements ThresholdsReader {
 
   private Document parseDocument(InputStream inputStream) throws IOException {
     try {
-      return DocumentBuilderFactory.newInstance().newDocumentBuilder()
-          .parse(inputStream);
+      DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+      documentBuilderFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+      return documentBuilderFactory.newDocumentBuilder().parse(inputStream);
     } catch (SAXException | ParserConfigurationException e) {
       throw new IOException(e);
     }
@@ -63,7 +64,7 @@ public final class CheckstyleThresholdsReader implements ThresholdsReader {
       Node moduleNode = modules.item(i);
       getAttributeValue(moduleNode, MODULE_NODE_NAME_ATTRIBUTE)
           .filter(name -> !ignoreModule(name))
-          .map(metricType -> Threshold.of(Metric.of(metricType, parseMax(moduleNode))))
+          .map(metricType -> Threshold.of(Metric.of(metricType, parseValue(moduleNode))))
           .ifPresent(thresholds::add);
     }
     return Thresholds.of(thresholds);
@@ -73,7 +74,7 @@ public final class CheckstyleThresholdsReader implements ThresholdsReader {
     return IGNORED_NAMES.contains(moduleName);
   }
 
-  private int parseMax(Node moduleNode) {
+  private int parseValue(Node moduleNode) {
     return getMaxPropertyNode(moduleNode)
         .flatMap(maxPropertyNode -> getAttributeValue(maxPropertyNode, PROPERTY_NODE_VALUE_ATTRIBUTE))
         .map(Integer::parseInt)

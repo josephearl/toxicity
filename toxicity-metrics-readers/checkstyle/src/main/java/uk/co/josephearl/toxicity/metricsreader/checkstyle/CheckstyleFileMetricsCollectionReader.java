@@ -52,8 +52,9 @@ public final class CheckstyleFileMetricsCollectionReader implements FileMetricsC
 
   private Document parseDocument(InputStream inputStream) throws IOException {
     try {
-      return DocumentBuilderFactory.newInstance().newDocumentBuilder()
-          .parse(inputStream);
+      DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+      documentBuilderFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+      return documentBuilderFactory.newDocumentBuilder().parse(inputStream);
     } catch (SAXException | ParserConfigurationException e) {
       throw new IOException(e);
     }
