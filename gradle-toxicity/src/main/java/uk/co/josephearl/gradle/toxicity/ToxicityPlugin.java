@@ -20,6 +20,7 @@ import org.gradle.api.internal.ConventionMapping;
 import org.gradle.api.internal.IConventionAware;
 import org.gradle.api.plugins.quality.CodeQualityExtension;
 import org.gradle.api.plugins.quality.internal.AbstractCodeQualityPlugin;
+import org.gradle.api.reporting.Report;
 import org.gradle.api.tasks.SourceSet;
 
 import java.io.File;
@@ -81,11 +82,15 @@ public class ToxicityPlugin extends AbstractCodeQualityPlugin<Toxicity> {
   }
 
   private void configureReportsConventionMapping(Toxicity task, final String baseName) {
-    task.getReports().all(report -> {
-      ConventionMapping reportMapping = conventionMappingOf(report);
-      reportMapping.map("enabled", () -> true);
-      reportMapping.map("destination", () -> new File(extension.getReportsDir(), baseName + "." + report.getName()));
-    });
+    Report csvReport = task.getReports().getCsv();
+    ConventionMapping csvReportMapping = conventionMappingOf(csvReport);
+    csvReportMapping.map("enabled", () -> true);
+    csvReportMapping.map("destination", () -> new File(extension.getReportsDir(), baseName + "." + csvReport.getName()));
+
+    Report htmlReport = task.getReports().getHtml();
+    ConventionMapping htmlReportMapping = conventionMappingOf(htmlReport);
+    htmlReportMapping.map("enabled", () -> false);
+    htmlReportMapping.map("destination", () -> new File(extension.getReportsDir(), baseName + "-" + htmlReport.getName()));
   }
 
   @Override

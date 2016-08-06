@@ -16,7 +16,6 @@
 package uk.co.josephearl.gradle.toxicity;
 
 import groovy.lang.Closure;
-import groovy.lang.DelegatesTo;
 import org.gradle.api.Action;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.file.FileCollection;
@@ -44,16 +43,16 @@ public class Toxicity extends SourceTask implements Reporting<ToxicityReports> {
   private Map<String, Object> configProperties = new LinkedHashMap<String, Object>();
   private final ToxicityReports reports;
 
+  public Toxicity() {
+    reports = getInstantiator().newInstance(ToxicityReportsImpl.class, this);
+  }
+
   public File getConfigFile() {
     return getConfig() == null ? null : getConfig().asFile();
   }
 
   public void setConfigFile(File configFile) {
     setConfig(getProject().getResources().getText().fromFile(configFile));
-  }
-
-  public Toxicity() {
-    reports = new ToxicityReports(this);
   }
 
   @Inject
@@ -68,7 +67,7 @@ public class Toxicity extends SourceTask implements Reporting<ToxicityReports> {
 
   @Deprecated
   @Override
-  public ToxicityReports reports(@DelegatesTo(value = ToxicityReports.class, strategy = Closure.DELEGATE_FIRST) Closure closure) {
+  public ToxicityReports reports(Closure closure) {
     return reports(new ClosureBackedAction<ToxicityReports>(closure));
   }
 
@@ -79,8 +78,11 @@ public class Toxicity extends SourceTask implements Reporting<ToxicityReports> {
 
   @TaskAction
   public void run() {
-    if (!reports.getCsv().isEnabled()) {
-      throw new InvalidUserDataException("Toxicity tasks must have a report enabled, however the csv report is not enabled for task '$path'. You need to enable it");
+    if (reports.getEnabled().isEmpty()) {
+      throw new InvalidUserDataException("Toxicity tasks must have one report enabled, however neither the csv or html report is enabled for task '$path'");
+    }
+    if (reports.getEnabled().size() > 1) {
+      throw new InvalidUserDataException("Toxicity tasks can only have one report enabled, however both the csv and html report is enabled for task '$path'");
     }
     CheckstyleInvoker.invoke(this);
     ToxicityInvoker.invoke(this);

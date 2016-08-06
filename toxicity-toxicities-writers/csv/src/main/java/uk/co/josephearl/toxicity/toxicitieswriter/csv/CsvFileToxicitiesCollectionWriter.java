@@ -20,6 +20,9 @@ public final class CsvFileToxicitiesCollectionWriter implements FileToxicitiesCo
   }
 
   public static CsvFileToxicitiesCollectionWriter create(File file) throws IOException {
+    if (!file.getParentFile().exists() && !file.getParentFile().mkdirs()) {
+      throw new FileNotFoundException(String.format("Parent directory '%s' does not exist and could not be created", file.getParentFile()));
+    }
     return new CsvFileToxicitiesCollectionWriter(new FileWriter(file));
   }
 

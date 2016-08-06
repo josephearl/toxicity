@@ -71,17 +71,18 @@ div.tooltip {
 }
 
 #toxicity-table {
+  position: relative;
 }
 
 th {
-  padding-right: 10px;
   text-align: left;
 }
 
-td {
+th, td {
   padding-right: 10px;
 }
 
 td.number {
   text-align: right;
 }
+

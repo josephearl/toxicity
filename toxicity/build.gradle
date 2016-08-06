@@ -25,3 +25,10 @@ publishing {
     }
   }
 }
+
+tasks.withType(uk.co.josephearl.gradle.toxicity.Toxicity) {
+  reports {
+    csv.enabled false
+    html.enabled true
+  }
+}

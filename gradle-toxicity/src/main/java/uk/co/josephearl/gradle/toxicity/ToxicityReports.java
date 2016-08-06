@@ -1,18 +1,15 @@
 package uk.co.josephearl.gradle.toxicity;
 
-import org.gradle.api.Task;
+import org.gradle.api.reporting.DirectoryReport;
+import org.gradle.api.reporting.Report;
+import org.gradle.api.reporting.ReportContainer;
 import org.gradle.api.reporting.SingleFileReport;
-import org.gradle.api.reporting.internal.TaskGeneratedSingleFileReport;
-import org.gradle.api.reporting.internal.TaskReportContainer;
+import org.gradle.api.tasks.Nested;
 
-public class ToxicityReports extends TaskReportContainer<SingleFileReport> {
-  public ToxicityReports(Task task) {
-    super(SingleFileReport.class, task);
+public interface ToxicityReports extends ReportContainer<Report> {
+  @Nested
+  DirectoryReport getHtml();
 
-    add(TaskGeneratedSingleFileReport.class, "csv", task);
-  }
-
-  public SingleFileReport getCsv() {
-    return getByName("csv");
-  }
+  @Nested
+  SingleFileReport getCsv();
 }

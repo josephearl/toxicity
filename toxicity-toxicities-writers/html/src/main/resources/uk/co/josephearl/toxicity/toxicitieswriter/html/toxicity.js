@@ -135,7 +135,13 @@ toxicity.renderChart = function(el, thresholds, toxicities) {
 
   var xscale = d3.scale.linear()
     .domain([0, toxicities.length])
-    .rangeRound([LEFTSPACE, (BWIDTH + BGAP) * toxicities.length + LEFTSPACE])
+    .rangeRound([LEFTSPACE, (BWIDTH + BGAP) * toxicities.length + LEFTSPACE]);
+
+  //var xaxis = d3.svg.axis()
+  //  .scale(xscale)
+  //  .orient("bottom")
+  //  .tickValues(toxicities.map(function(d, i) { return i; }))
+  //  .tickFormat(function(i) { return toxicities[i].name; });
 
   var yscale = d3.scale.linear()
   // Dynamic max .domain([0, d3.max(toxicities, function(d) { return d.total })])
@@ -178,6 +184,17 @@ toxicity.renderChart = function(el, thresholds, toxicities) {
     .attr("class", "axis")
     .attr("transform", "translate(" + LEFTSPACE + ", 0)")
     .call(yaxis);
+
+  chart.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + 0 + ", " + CHEIGHT + ")");
+  //  .call(xaxis)
+  //  .selectAll("text")
+  //  .style("text-anchor", "end")
+  //  .style("font-size", "9px")
+  //  .attr("dx", "-.6em")
+  //  .attr("dy", ".10em")
+  //  .attr("transform", "rotate(-70)");
 }
 
 var tooltip = function(el, thresholds, colors, a) {
@@ -199,7 +216,6 @@ var tooltip = function(el, thresholds, colors, a) {
         $(thresholds.slice(0).reverse()).each(function(i, metricType) {
           if (d.toxicities[metricType] > 0) {
             var color = colors[colors.length - i - 1];
-            console.log('color', i, color);
             var p = div.append("p");
             p.append("span")
               .attr("class", "tooltip-swatch")
@@ -235,25 +251,27 @@ var tooltip = function(el, thresholds, colors, a) {
 };
 
 toxicity.renderTable = function(el, thresholds, toxicities) {
-  var header = "<tr>"
-    + "<th>File</th>"
+  var header = "<thead><tr>"
+    + "<th class=\"filename\">File</th>"
     + "<th>Toxicity</th>";
   thresholds.forEach(function(metricType) {
     header += "<th>" + metricType + "</th>";
   });
-  header += "</tr>";
-
+  header += "</tr></thead>";
   $(el).append(header);
 
+  var body = "<tbody>";
   toxicities.map(function(d, i) {
     var row = "<tr>"
-      + "<td>" + d.path + "</td>"
+      + "<td class=\"filename\">" + d.path + "</td>"
       + "<td class=\"number\">" + d.total + "</td>";
     thresholds.forEach(function(metricType) {
       row += "<td class=\"number\">" + (d.toxicities[metricType] || 0) + "</td>";
     });
     row += "</tr>";
+    body += row;
 
-    $(el).append(row);
   });
+  body += "</tbody>";
+  $(el).append(body);
 };

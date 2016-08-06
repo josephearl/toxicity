@@ -68,8 +68,6 @@ To build everything and run all tests, publish the gradle plugin locally and run
 **Development**
 
 * README more (sub-readme's)
-* Writer/reporter cleanup - directory writer?
-    * Writer.getEntryPoint
 * CLI support HTML
 * Gradle plugin support HTML
 * HTML report table
