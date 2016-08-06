@@ -68,9 +68,16 @@ To build everything and run all tests, publish the gradle plugin locally and run
 **Development**
 
 * README more (sub-readme's)
-* CLI support HTML
-* Gradle plugin support HTML
-* HTML report table
+* Tests
+    * Coverage (Jacoco?)
+    * CLI HTML report
+    * Gradle HTML report
+    * Util functions
+    * Gradle plugin tests
+* Improve HTML report table
+    * Left column fixed size 
+    * Scroll other columns if wider than page
+    * Scroll left column
 * Builders for imm types?
 * Toxicity threshold for plugin (and allowFailures)
 * Var args??? (what did I mean by this?)
