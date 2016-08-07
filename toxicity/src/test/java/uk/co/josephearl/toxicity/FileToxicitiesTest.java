@@ -11,7 +11,7 @@ public class FileToxicitiesTest {
   @Test
   public void file_isCorrect() {
     File file = new File("Test.checkstyle");
-    Toxicities toxicities = Toxicities.of(new HashMap<String, Toxicity>() {{}});
+    Toxicities toxicities = Toxicities.of(new HashMap<String, Toxicity>() {});
 
     FileToxicities fileToxicities = FileToxicities.of(file, toxicities);
 

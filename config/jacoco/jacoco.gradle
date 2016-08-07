@@ -1,0 +1,14 @@
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+  reports {
+    html.enabled = true
+    html.destination "${reporting.baseDir}/jacoco/test"
+    xml.enabled = true
+    csv.enabled = false
+  }
+}
+
+check {
+  dependsOn += ['jacocoTestReport']
+}

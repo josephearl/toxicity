@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
 abstract class ToxicityInvoker {
@@ -32,11 +33,11 @@ abstract class ToxicityInvoker {
 
     processBuilder.redirectErrorStream(true);
 
-    StringBuilder stdOutBuilder = new StringBuilder("");
+    StringBuilder stdOutBuilder = new StringBuilder();
 
     try {
       Process process = processBuilder.start();
-      try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+      try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
         String line;
         while ((line = reader.readLine()) != null) {
           stdOutBuilder.append(line);

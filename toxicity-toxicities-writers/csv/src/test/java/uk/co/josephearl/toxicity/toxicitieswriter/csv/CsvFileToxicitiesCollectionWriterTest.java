@@ -26,6 +26,7 @@ public class CsvFileToxicitiesCollectionWriterTest {
     );
     FileToxicitiesCollection fileToxicitiesCollection = FileToxicitiesCollection.of(Collections.singletonList(fileToxicities));
     File outputFile = File.createTempFile("csv_file_metric_toxicities_collection_writer_test", ".csv");
+    assertThat(outputFile.delete()).isTrue();
 
     try {
       try (CsvFileToxicitiesCollectionWriter csvFileToxicitiesCollectionWriter = CsvFileToxicitiesCollectionWriter.create(outputFile)) {
@@ -34,7 +35,7 @@ public class CsvFileToxicitiesCollectionWriterTest {
 
       assertThat(contentOf(outputFile)).isEqualTo(contentOf(expected));
     } finally {
-      outputFile.delete();
+      assertThat(outputFile.delete()).isTrue();
     }
   }
 }

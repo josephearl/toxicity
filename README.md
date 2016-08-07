@@ -60,7 +60,7 @@ A set of standard thresholds are provided for use with the metrics output from c
 To build everything and run all tests, publish the gradle plugin locally and run the gradle plugin on toxicity and toxicity-cli:
 
 ```
-./gradlew clean publishToMavenLocal build
+./gradlew publishToMavenLocal build
 ```
 
 ## TODO
@@ -68,21 +68,12 @@ To build everything and run all tests, publish the gradle plugin locally and run
 **Development**
 
 * README more (sub-readme's)
-* Tests
-    * Coverage (Jacoco?)
-    * CLI HTML report
-    * Gradle HTML report
-    * Util functions
-    * Gradle plugin tests
-* Improve HTML report table
-    * Left column fixed size 
-    * Scroll other columns if wider than page
-    * Scroll left column
-* Builders for imm types?
 * Toxicity threshold for plugin (and allowFailures)
+* Save checkstyle report? (gradle plugin)
+* Builders for imm types?
+* More test coverage (see coverage report)
 * Var args??? (what did I mean by this?)
 * Measuring metrics (e.g. w/ Checkstyle - examples of generating)
-* Save checkstyle report (gradle plugin)
 * Publish
 * sbt-toxicity that uses SbtCheckstyle and java toxicity libs
 * Add threshold info in writers?

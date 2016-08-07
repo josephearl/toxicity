@@ -3,7 +3,12 @@ version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
-apply plugin: 'uk.co.josephearl.gradle.toxicity'
+
+apply from: "${rootDir}/config/findbugs/findbugs.gradle"
+apply from: "${rootDir}/config/jacoco/jacoco.gradle"
+apply from: "${rootDir}/config/jdepend/jdepend.gradle"
+apply from: "${rootDir}/config/pmd/pmd.gradle"
+apply from: "${rootDir}/config/toxicity/toxicity.gradle"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -23,12 +28,5 @@ publishing {
     mavenJava(MavenPublication) {
       from components.java
     }
-  }
-}
-
-tasks.withType(uk.co.josephearl.gradle.toxicity.Toxicity) {
-  reports {
-    csv.enabled false
-    html.enabled true
   }
 }

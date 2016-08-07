@@ -9,7 +9,7 @@ public class ToxicityTest {
   public void of_zero_returnsStaticInstance() {
     Toxicity toxicity = Toxicity.of(0d);
 
-    assertThat(toxicity == Toxicity.zero());
+    assertThat(toxicity == Toxicity.zero()).isTrue();
   }
 
   @Test
@@ -17,7 +17,7 @@ public class ToxicityTest {
     Toxicity toxicity1 = Toxicity.of(0d);
     Toxicity toxicity2 = Toxicity.of(0.0d);
 
-    assertThat(toxicity1 == toxicity2);
+    assertThat(toxicity1 == toxicity2).isTrue();
   }
 
   @Test

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Ignore Groovy closures -->
+    <Match>
+        <Class name="~.*\$_invoke_closure\d+(\$_closure\d+)*"/>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+</FindBugsFilter>

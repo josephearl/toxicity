@@ -1,0 +1,123 @@
+import org.gradle.api.internal.ConventionMapping
+import org.gradle.api.internal.ConventionTask
+import org.gradle.api.internal.IConventionAware
+import org.gradle.api.reporting.internal.TaskGeneratedSingleFileReport
+import org.gradle.api.reporting.internal.TaskReportContainer
+
+apply plugin: 'jdepend'
+
+interface CustomizableHtmlReport extends SingleFileReport {
+  File getStylesheet();
+
+  void setStylesheet(File stylesheet);
+}
+
+class CustomizableHtmlReportImpl extends TaskGeneratedSingleFileReport implements CustomizableHtmlReport {
+  private File stylesheet;
+
+  CustomizableHtmlReportImpl(String name, Task task) {
+    super(name, task);
+  }
+
+  @Override
+  File getStylesheet() {
+    return stylesheet;
+  }
+
+  @Override
+  void setStylesheet(File stylesheet) {
+    this.stylesheet = stylesheet;
+  }
+}
+
+interface HtmlReports extends ReportContainer<CustomizableHtmlReport> {
+  @Nested
+  CustomizableHtmlReport getHtml();
+}
+
+class HtmlReportsImpl extends TaskReportContainer<CustomizableHtmlReport> implements HtmlReports  {
+  HtmlReportsImpl(Task task) {
+    super(CustomizableHtmlReport.class, task);
+
+    add(CustomizableHtmlReportImpl.class, 'html', task);
+  }
+
+  @Override
+  CustomizableHtmlReport getHtml() {
+    return getByName('html')
+  }
+}
+
+class HtmlReportTask extends ConventionTask implements Reporting<HtmlReports> {
+  @InputFile
+  File inputFile
+  @Input
+  @org.gradle.api.tasks.Optional
+  Map<String, String> params = [:]
+  final HtmlReports reports;
+
+  HtmlReportTask() {
+    reports = new HtmlReportsImpl(this)
+    reports.all { report ->
+      ConventionMapping reportMapping = conventionMappingOf(report);
+      reportMapping.map("enabled", { true });
+    }
+    onlyIf {
+      inputFile.exists()
+    }
+  }
+
+  static ConventionMapping conventionMappingOf(Object object) {
+    return ((IConventionAware) object).getConventionMapping();
+  }
+
+  @TaskAction
+  void run() {
+    if (!reports.html.enabled) {
+      throw new InvalidUserDataException("HtmlReportTask tasks must have the html report enabled, however it is not enabled for task '$path'");
+    }
+    if (reports.html.destination == null) {
+      throw new InvalidUserDataException("HtmlReportTask tasks must have a destination set for the html report, however none is set for task '$path'");
+    }
+    if (reports.html.stylesheet == null) {
+      throw new InvalidUserDataException("HtmlReportTask tasks must have a stylesheet set for the html report, however none is set for task '$path'");
+    }
+    ant.xslt(in: inputFile, style: reports.html.stylesheet, out: reports.html.destination) {
+      params.each { key, value ->
+        ant.param(name: key, expression: value)
+      }
+    }
+  }
+
+  @Nested
+  @Override
+  HtmlReports getReports() {
+    return reports
+  }
+
+  @Override
+  HtmlReports reports(Closure closure) {
+    ConfigureUtil.configure(closure, reports)
+    return reports
+  }
+}
+
+task jdependMainReport(dependsOn: jdependMain, type: HtmlReportTask, group: 'verification', description: 'Generates a HTML report after executing jdepend checks.') {
+  inputFile file("${reporting.baseDir}/jdepend/main.xml")
+  reports {
+    html.stylesheet file("${rootProject.projectDir}/config/jdepend/jdepend-report.xslt")
+    html.destination file("${reporting.baseDir}/jdepend/main.html")
+  }
+}
+
+task jdependTestReport(dependsOn: jdependTest, type: HtmlReportTask, group: 'verification', description: 'Generates a HTML report after executing jdepend checks.') {
+  inputFile file("${reporting.baseDir}/jdepend/test.xml")
+  reports {
+    html.stylesheet file("${rootProject.projectDir}/config/jdepend/jdepend-report.xslt")
+    html.destination file("${reporting.baseDir}/jdepend/test.html")
+  }
+}
+
+check {
+  dependsOn += ['jdependMainReport', 'jdependTestReport']
+}

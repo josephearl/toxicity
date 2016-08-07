@@ -71,7 +71,8 @@ div.tooltip {
 }
 
 #toxicity-table {
-  position: relative;
+  width: 100%;
+  overflow-x: scroll;
 }
 
 th {
@@ -85,4 +86,3 @@ th, td {
 td.number {
   text-align: right;
 }
-

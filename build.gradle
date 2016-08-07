@@ -1,0 +1,42 @@
+apply plugin: 'jacoco'
+apply plugin: 'build-dashboard'
+
+repositories {
+  mavenCentral()
+}
+
+task jacocoAggregateTestReport(type: JacocoReport) {
+  dependsOn { subprojects.findAll { subproject -> subproject.pluginManager.hasPlugin('java') }.test }
+  additionalSourceDirs = files()
+  sourceDirectories = files()
+  classDirectories = files()
+  executionData = files()
+  reports {
+    html.enabled = true
+    html.destination "${reporting.baseDir}/jacoco/test"
+    xml.enabled = true
+    csv.enabled = false
+  }
+  onlyIf = {
+    true
+  }
+  doFirst {
+    subprojects.findAll { subproject ->
+      subproject.pluginManager.hasPlugin('java')
+    }.each { subproject ->
+      additionalSourceDirs files((Set<File>) subproject.sourceSets.main.allJava.srcDirs)
+      additionalClassDirs ((FileCollection) subproject.sourceSets.main.output)
+      if (subproject.pluginManager.hasPlugin('jacoco')) {
+        executionData subproject.tasks.jacocoTestReport.executionData
+      }
+    }
+
+    executionData = files(executionData.findAll {
+      it.exists()
+    })
+  }
+}
+
+task build {
+  dependsOn += ['jacocoAggregateTestReport']
+}

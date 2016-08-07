@@ -11,18 +11,18 @@ public class ToxicityCliTest {
   @Test
   public void main_writesToxicitiesFile() throws Exception {
     File toxicitiesOutputFile = File.createTempFile("toxicities", ".csv");
+    assertThat(toxicitiesOutputFile.delete()).isTrue();
     try {
       File expectedToxicitiesFile = new File(getClass().getResource("toxicity_cli_test_toxicities.csv").getFile());
       File thresholdsFile = new File(getClass().getResource("toxicity_cli_test_thresholds.xml").getFile());
       File metricsFile = new File(getClass().getResource("toxicity_cli_test_metrics.xml").getFile());
-      toxicitiesOutputFile.delete();
       String[] args = new String[]{thresholdsFile.getPath(), metricsFile.getPath(), toxicitiesOutputFile.getPath()};
 
       ToxicityCli.main(args);
 
       assertThat(contentOf(toxicitiesOutputFile)).isEqualTo(contentOf(expectedToxicitiesFile));
     } finally {
-      toxicitiesOutputFile.delete();
+      assertThat(toxicitiesOutputFile.delete()).isTrue();
     }
   }
 

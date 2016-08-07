@@ -1,0 +1,8 @@
+apply plugin: 'uk.co.josephearl.gradle.toxicity'
+
+tasks.withType(uk.co.josephearl.gradle.toxicity.Toxicity) {
+  reports {
+    csv.enabled false
+    html.enabled true
+  }
+}

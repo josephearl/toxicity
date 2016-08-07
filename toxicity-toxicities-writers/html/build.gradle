@@ -4,6 +4,11 @@ version '1.0.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
+apply from: "${rootDir}/config/findbugs/findbugs.gradle"
+apply from: "${rootDir}/config/jacoco/jacoco.gradle"
+apply from: "${rootDir}/config/jdepend/jdepend.gradle"
+apply from: "${rootDir}/config/pmd/pmd.gradle"
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

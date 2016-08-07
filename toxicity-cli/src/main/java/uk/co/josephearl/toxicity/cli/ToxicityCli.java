@@ -39,7 +39,6 @@ public final class ToxicityCli {
     ToxicityCalculator toxicityCalculator = ToxicityCalculator.create(thresholds);
     FileToxicitiesCollection toxicities = metrics.toxicities(toxicityCalculator);
 
-    recreateToxicitiesFileIfExists(args.toxicitiesFile());
     writeToxicities(args.toxicitiesFile(), args.toxicitiesFileFormat(), toxicities);
   }
 
@@ -67,21 +66,6 @@ public final class ToxicityCli {
     } catch (IOException e) {
       System.err.println(String.format("%s: error: could not write to toxicities file: '%s'", "toxicity-cli", toxicitiesFile));
       throw e;
-    }
-  }
-
-  private void recreateToxicitiesFileIfExists(File toxicitiesFile) throws IOException {
-    try {
-      recreateFileIfExists(toxicitiesFile);
-    } catch (IOException e) {
-      System.err.println(String.format("%s: error: toxicities file '%s' exists and could not be deleted", "toxicity-cli", toxicitiesFile));
-      throw e;
-    }
-  }
-
-  private void recreateFileIfExists(File file) throws IOException {
-    if (file.exists() && !(file.delete() && file.createNewFile())) {
-      throw new IOException(String.format("Could not delete file '%s'", file));
     }
   }
 }

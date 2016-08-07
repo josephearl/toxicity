@@ -13,7 +13,7 @@ class ToxicityReportsImpl extends TaskReportContainer<Report> implements Toxicit
   public ToxicityReportsImpl(Task task) {
     super(ConfigurableReport.class, task);
 
-    add(TaskGeneratedSingleDirectoryReport.class, "html", task, "toxicity.html");
+    add(TaskGeneratedSingleDirectoryReport.class, "html", task, "index.html");
     add(TaskGeneratedSingleFileReport.class, "csv", task);
   }
 

@@ -4,10 +4,8 @@ import uk.co.josephearl.toxicity.DirectoryFileToxicitiesCollectionWriter;
 import uk.co.josephearl.toxicity.FileToxicities;
 import uk.co.josephearl.toxicity.FileToxicitiesCollection;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -21,7 +19,7 @@ public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileTo
 
   private HtmlFileToxicitiesCollectionWriter(File directory) {
     this.directory = directory;
-    entryPoint = new File(directory, "toxicity.html");
+    entryPoint = new File(directory, "index.html");
   }
 
   public static HtmlFileToxicitiesCollectionWriter create(File directory) throws IOException {
@@ -38,7 +36,7 @@ public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileTo
   public void write(FileToxicitiesCollection content) throws IOException {
     writeToxicitiesJs("toxicities.js", directory, content);
     writeThresholdsJs("thresholds.js", directory, content);
-    copyResource("toxicity.html", directory);
+    copyResource("index.html", directory);
     copyResource("d3.v3.min.js", directory);
     copyResource("jquery-1.9.1.min.js", directory);
     copyResource("toxicity.css", directory);
@@ -57,7 +55,7 @@ public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileTo
         .collect(Collectors.collectingAndThen(toJsonArray(), json -> toJsonp("toxicities", json)))
         + System.lineSeparator();
 
-    try (FileWriter writer = new FileWriter(toxicitiesJsFile)) {
+    try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(toxicitiesJsFile), StandardCharsets.UTF_8)) {
       writer.write(toxicitiesJs);
     }
   }
@@ -70,7 +68,7 @@ public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileTo
         .collect(Collectors.collectingAndThen(toJsonArray(), json -> toJsonp("thresholds", json)))
         + System.lineSeparator();
 
-    try (FileWriter writer = new FileWriter(thresholdsJsFile)) {
+    try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(thresholdsJsFile), StandardCharsets.UTF_8)) {
       writer.write(thresholdsJs);
     }
   }

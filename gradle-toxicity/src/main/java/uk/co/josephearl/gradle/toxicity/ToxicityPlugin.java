@@ -90,7 +90,7 @@ public class ToxicityPlugin extends AbstractCodeQualityPlugin<Toxicity> {
     Report htmlReport = task.getReports().getHtml();
     ConventionMapping htmlReportMapping = conventionMappingOf(htmlReport);
     htmlReportMapping.map("enabled", () -> false);
-    htmlReportMapping.map("destination", () -> new File(extension.getReportsDir(), baseName + "-" + htmlReport.getName()));
+    htmlReportMapping.map("destination", () -> new File(extension.getReportsDir(), baseName));
   }
 
   @Override

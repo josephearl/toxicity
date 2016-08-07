@@ -6,6 +6,7 @@ import uk.co.josephearl.toxicity.FileToxicitiesCollectionWriter;
 import uk.co.josephearl.toxicity.Toxicity;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,7 +24,7 @@ public final class CsvFileToxicitiesCollectionWriter implements FileToxicitiesCo
     if (!file.getParentFile().exists() && !file.getParentFile().mkdirs()) {
       throw new FileNotFoundException(String.format("Parent directory '%s' does not exist and could not be created", file.getParentFile()));
     }
-    return new CsvFileToxicitiesCollectionWriter(new FileWriter(file));
+    return new CsvFileToxicitiesCollectionWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
   }
 
   @Override

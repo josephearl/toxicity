@@ -50,13 +50,12 @@ public class HtmlFileToxicitiesCollectionWriterTest {
     try {
       try (HtmlFileToxicitiesCollectionWriter htmlFileToxicitiesCollectionWriter = HtmlFileToxicitiesCollectionWriter.create(outputDirectory)) {
         htmlFileToxicitiesCollectionWriter.write(fileToxicitiesCollection);
-        System.out.println(htmlFileToxicitiesCollectionWriter.getEntryPoint());
       }
 
       assertThat(contentOf(toxicitiesJs)).isEqualTo(contentOf(expectedToxicitiesJsFile));
       assertThat(contentOf(thresholdsJs)).isEqualTo(contentOf(expectedThresholdsJsFile));
     } finally {
-      //deleteDirectory(outputDirectory);
+      deleteDirectory(outputDirectory);
     }
   }
 
