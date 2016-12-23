@@ -102,14 +102,8 @@ To build everything and run all tests, publish the gradle plugin locally and run
 
 **Development**
 
-* Java 8 - interfaces or value types
-** Collections are value types? Or interfaces?
+* Consider introducing more interfaces
 * Java 7 support
-* Review interface and documentation
-* Push to GitHub
-
----
-
 * CLI should support arbitrary readers and writers using classpath
 * Add option to keep Checkstyle report to Gradle plugin
 * Add threshold and allowFailures options to Gradle plugin
