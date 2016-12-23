@@ -1,4 +1,4 @@
-# toxicity
+# toxicity [![Linux Build Status](https://travis-ci.org/JosephEarl/toxicity.svg?branch=master)](https://travis-ci.org/JosephEarl/toxicity)
 
 Build plugins, a CLI and libraries for measuring and communicating code quality using toxicity scores and charts. 
 
