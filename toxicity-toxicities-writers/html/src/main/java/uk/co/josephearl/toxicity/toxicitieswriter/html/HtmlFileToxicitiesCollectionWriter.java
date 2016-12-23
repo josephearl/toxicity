@@ -1,8 +1,8 @@
 package uk.co.josephearl.toxicity.toxicitieswriter.html;
 
-import uk.co.josephearl.toxicity.DirectoryFileToxicitiesCollectionWriter;
 import uk.co.josephearl.toxicity.FileToxicities;
 import uk.co.josephearl.toxicity.FileToxicitiesCollection;
+import uk.co.josephearl.toxicity.FileToxicitiesCollectionWriter;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -13,23 +13,16 @@ import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileToxicitiesCollectionWriter {
+public final class HtmlFileToxicitiesCollectionWriter implements FileToxicitiesCollectionWriter {
   private final File directory;
-  private final File entryPoint;
 
   private HtmlFileToxicitiesCollectionWriter(File directory) {
     this.directory = directory;
-    entryPoint = new File(directory, "index.html");
   }
 
   public static HtmlFileToxicitiesCollectionWriter create(File directory) throws IOException {
-    DirectoryFileToxicitiesCollectionWriter.checkDirectoryIsWritable(directory);
+    checkDirectoryIsWritable(directory);
     return new HtmlFileToxicitiesCollectionWriter(directory);
-  }
-
-  @Override
-  public File getEntryPoint() {
-    return entryPoint;
   }
 
   @Override
@@ -98,5 +91,14 @@ public final class HtmlFileToxicitiesCollectionWriter implements DirectoryFileTo
     InputStream from = HtmlFileToxicitiesCollectionWriter.class.getResourceAsStream(name);
     Path to = new File(directory, name).toPath();
     Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+  }
+
+  private static void checkDirectoryIsWritable(File directory) throws IOException {
+    if (directory.exists() && !directory.isDirectory()) {
+      throw new FileNotFoundException(String.format("File '%s' is a file, not a directory", directory));
+    }
+    if (!directory.exists() && !directory.mkdirs()) {
+      throw new FileNotFoundException(String.format("Could not create directory '%s'", directory));
+    }
   }
 }

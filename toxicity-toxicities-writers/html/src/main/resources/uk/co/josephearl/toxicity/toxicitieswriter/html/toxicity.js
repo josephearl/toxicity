@@ -249,28 +249,3 @@ var tooltip = function(el, thresholds, colors, a) {
 
   return tooltip;
 };
-
-toxicity.renderTable = function(el, thresholds, toxicities) {
-  var table = "<table>"
-    + "<thead><tr>"
-    + "<th class=\"filename\">File</th>"
-    + "<th>Toxicity</th>";
-  thresholds.forEach(function(metricType) {
-    table += "<th>" + metricType + "</th>";
-  });
-  table += "</tr></thead>"
-    + "<tbody>";
-  toxicities.map(function(d, i) {
-    var row = "<tr>"
-      + "<td class=\"filename\">" + d.name + "</td>"
-      + "<td class=\"number\">" + d.total + "</td>";
-    thresholds.forEach(function(metricType) {
-      row += "<td class=\"number\">" + (d.toxicities[metricType] || 0) + "</td>";
-    });
-    row += "</tr>";
-    table += row;
-  });
-  table += "</tbody>"
-    + "</table>";
-  $(el).append(table);
-};

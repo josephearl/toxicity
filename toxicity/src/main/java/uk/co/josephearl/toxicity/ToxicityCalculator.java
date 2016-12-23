@@ -35,7 +35,7 @@ public final class ToxicityCalculator {
   }
 
   private Toxicity sumToxicityForMetric(Toxicity toxicity, Toxicity toxicity2) {
-    return Toxicity.of(toxicity.value() + toxicity2.value());
+    return toxicity.add(toxicity2);
   }
 
   private Toxicities createToxicities(Map<String, Toxicity> toxicities) {

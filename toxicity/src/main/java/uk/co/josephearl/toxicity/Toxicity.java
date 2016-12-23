@@ -31,6 +31,10 @@ public final class Toxicity implements Comparable<Toxicity> {
     return this == ZERO;
   }
 
+  public Toxicity add(Toxicity toxicity) {
+    return Toxicity.of(value + toxicity.value);
+  }
+
   @Override
   public int compareTo(Toxicity toxicity) {
     return Double.compare(this.value, toxicity.value);

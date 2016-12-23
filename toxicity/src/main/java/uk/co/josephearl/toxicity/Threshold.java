@@ -1,10 +1,10 @@
 package uk.co.josephearl.toxicity;
 
 public final class Threshold {
-  private final Metric thresholdMetric;
+  private final Metric metric;
 
-  private Threshold(Metric thresholdMetric) {
-    this.thresholdMetric = thresholdMetric;
+  private Threshold(Metric metric) {
+    this.metric = metric;
   }
 
   public static Threshold of(Metric metric) {
@@ -12,21 +12,17 @@ public final class Threshold {
   }
 
   public Toxicity toxicity(Metric metric) {
-    return metric.compareTo(this.thresholdMetric) > 0 ?
-        Toxicity.of(metric.value() / (double) this.thresholdMetric.value()) :
+    return metric.compareTo(this.metric) > 0 ?
+        Toxicity.of(metric.value() / (double) this.metric.value()) :
         Toxicity.zero();
   }
 
   public String type() {
-    return thresholdMetric.type();
+    return metric.type();
   }
 
   public int value() {
-    return thresholdMetric.value();
-  }
-
-  public boolean equalsMetric(Metric metric) {
-    return thresholdMetric.equals(metric);
+    return metric.value();
   }
 
   @Override
@@ -34,16 +30,16 @@ public final class Threshold {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Threshold that = (Threshold) o;
-    return thresholdMetric.type().equals(that.thresholdMetric.type());
+    return metric.type().equals(that.metric.type());
   }
 
   @Override
   public int hashCode() {
-    return thresholdMetric.type().hashCode();
+    return metric.type().hashCode();
   }
 
   @Override
   public String toString() {
-    return "Threshold(" + thresholdMetric + ')';
+    return "Threshold(" + metric + ')';
   }
 }

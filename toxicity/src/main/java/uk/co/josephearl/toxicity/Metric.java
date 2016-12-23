@@ -1,6 +1,5 @@
 package uk.co.josephearl.toxicity;
 
-// TODO: rename to type
 public final class Metric implements Comparable<Metric> {
   private final String type;
   private final int value;

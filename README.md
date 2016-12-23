@@ -2,7 +2,7 @@
 
 Build plugins, a CLI and libraries for measuring and communicating code quality using toxicity scores and charts. 
 
-In comparison to other projects this one aims to be language independent, file format independent and easy to use.
+**This project is under development and as such the API and feature-set is subject to change. Java is currently the only supported language and jars are not yet available on Maven Central or Bintray.**
 
 [Toxicity charts](http://erik.doernenburg.com/2008/11/how-toxic-is-your-code/) are a simple and effective way to communicate code quality (or perhaps lack of it) to other human beings.
 A Toxicity chart is a vertical bar chart where each bar represents a file and the height of the bar is proportional to the toxicity score.
@@ -13,9 +13,7 @@ The toxicity score is based on code quality metrics and thresholds:
 
 > For example, the method length metric has a threshold of 30. If a class contains a method that is longer it gets points proportional to the length of the method in relation to the threshold, e.g. a method with 45 lines of code would get 1.5 points because its length is 1.5 times the threshold. The score for all elements is added up. So, if a class comprises two methods, one that is 45 lines and another that is 60 lines long, the method length component of the score for the class will be 3.5 points. This means that elements are not just classified as toxic but the score reflects how toxic the element is.
 
--*[Erik Dörnenburg](http://erik.doernenburg.com/2008/11/how-toxic-is-your-code/)*
-
-For a more thorough introduction to toxicity charts and scores createReader the original article [How toxic is your code?](http://erik.doernenburg.com/2008/11/how-toxic-is-your-code/) by *Erik Dörnenburg* and the follow-up: [Toxicity reloaded](http://erik.doernenburg.com/2013/06/toxicity-reloaded/).
+— *Erik Dörnenburg*, [How toxic is your code?](http://erik.doernenburg.com/2008/11/how-toxic-is-your-code/)
 
 ## Generating toxicity reports
 
@@ -27,33 +25,70 @@ Or roll your own tools and plugins using the library and the reader and writer p
 
 **Build plugins**
 
-* [gradle-toxicity](gradle-toxicity/README.md) - `uk.co.josephearl:gradle-toxicity`
+* gradle-toxicity - `uk.co.josephearl:gradle-toxicity`
+
+To use the Gradle plugin first build the project (see Developing toxicity) then add a classpath dependency on the plugin to your `build.gradle`:
+
+```groovy
+buildscript {
+    dependencies {
+        classpath 'uk.co.josephearl:gradle-toxicity:X.Y.Z'
+    }
+}
+```
+
+Then apply the plugin with your chosen report options:
+
+```groovy
+apply plugin: 'uk.co.josephearl.gradle.toxicity'
+
+tasks.withType(uk.co.josephearl.gradle.toxicity.Toxicity) {
+  reports {
+    csv.enabled false
+    html.enabled true
+  }
+}
+```
+
+Run the `toxicity` task to generate reports:
+```
+./gradlew toxicity
+```
 
 **CLI**
 
-* [toxicity-cli](toxicity-cli/README.md) - `uk.co.josephearl.toxicity:toxicity-cli`
+* toxicity-cli - `uk.co.josephearl.toxicity:toxicity-cli`
+
+To use the CLI directly build the project (see Developing toxicity) and execute:
+
+```
+java -jar toxicity-cli.jar \
+  thresholds.xml --thresholds-format checkstyle \
+  metrics.xml --metrics-format checkstyle \
+  toxicities.csv --toxicities-format csv
+```
 
 **Library**
 
-* [toxicity](toxicity/README.md) - `uk.co.josephearl.toxicity:toxicity`
+* toxicity - `uk.co.josephearl.toxicity:toxicity`
 
-**Readers and reports**
+**Readers and reporters**
 
-* [metrics-readers](metrics-readers/README.md):
-    * [checkstyle](checkstyle/README.md) - `uk.co.josephearl.toxicity:metrics-reader-checkstyle`
-* [thresholds-readers]():
-    * [checkstyle](checkstyle/README.md) - `uk.co.josephearl.toxicity:thresholds-reader-checkstyle`
-    * [eslint](eslint/README.md) - `uk.co.josephearl.toxicity:thresholds-reader-eslint`
-* [toxicities-reporters]():
-    * [csv](csv/README.md) - `uk.co.josephearl.toxicity:toxicities-createWriter-csv`
-    * [html](csv/README.md) - `uk.co.josephearl.toxicity:toxicities-createWriter-html`
+* metrics-readers:
+    * checkstyle - `uk.co.josephearl.toxicity:metrics-reader-checkstyle`
+* thresholds-readers:
+    * checkstyle - `uk.co.josephearl.toxicity:thresholds-reader-checkstyle`
+    * eslint - `uk.co.josephearl.toxicity:thresholds-reader-eslint`
+* toxicities-reporters:
+    * csv - `uk.co.josephearl.toxicity:toxicities-createWriter-csv`
+    * html - `uk.co.josephearl.toxicity:toxicities-createWriter-html`
 
 **Standard thresholds**
 
 A set of standard thresholds are provided for use with the metrics output from common tools code quality tools. These also provide configuration files that can be used with the tool to gather metrics correctly.
 
-* [checkstyle](checkstyle/README.md) - `uk.co.josephearl.toxicity:thresholds-checkstyle`
-* [eslint](eslint/README.md) - `uk.co.josephearl.toxicity:thresholds-eslint`
+* checkstyle - `uk.co.josephearl.toxicity:thresholds-checkstyle`
+* eslint - `uk.co.josephearl.toxicity:thresholds-eslint`
 
 ## Developing toxicity
 
@@ -67,20 +102,29 @@ To build everything and run all tests, publish the gradle plugin locally and run
 
 **Development**
 
-* README more (sub-readme's)
-* Toxicity threshold for plugin (and allowFailures)
-* Save checkstyle report? (gradle plugin)
-* Builders for imm types?
-* More test coverage (see coverage report)
-* Var args??? (what did I mean by this?)
-* Measuring metrics (e.g. w/ Checkstyle - examples of generating)
-* Publish
-* sbt-toxicity that uses SbtCheckstyle and java toxicity libs
-* Add threshold info in writers?
-* More stats in CSV? averages, threshold info?
-* More packaging formats for CLI(s)? Docker? npm? (or just make JS version?)
-* JSON formats for toxicities, readers, writers (easy compatibility with JS version)
-* Languages: JS, C#, Scala (can use Scalastyle? or Checkstyle)?  ... Ruby? Python? Go? etc
+* Java 8 - interfaces or value types
+** Collections are value types? Or interfaces?
+* Java 7 support
+* Review interface and documentation
+* Push to GitHub
+
+---
+
+* CLI should support arbitrary readers and writers using classpath
+* Add option to keep Checkstyle report to Gradle plugin
+* Add threshold and allowFailures options to Gradle plugin
+* Consider introducing builders for constructing immutable types
+* Improve test coverage
+* Use React for HTML chart
+* Support C#/MSBuild with dotnet core
+* Re-use HTML report across languages
+* Cross-language acceptance tests for CLI
+* Var args??? (what did I mean by this? constructor or method?)
+* Document how to calculate toxicities from arbitrary code quality tools
+* Additional information in toxicities output like averages and thresholds
+* Defined JSON formats for data structures and readers/writers for easy interoperability between lanuages
+* Support for more packaging formats for CLI like Docker, Brew
+* Support for more languages like JavaScript, Scala, Ruby, Python or Go
 
 **Research**
 
